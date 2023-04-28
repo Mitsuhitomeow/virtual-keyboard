@@ -1,4 +1,5 @@
 body {
+  font-family:'Courier New', Courier, monospace;
   padding: 0;
   margin: 0;
   background-color: rgb(141, 159, 165);
@@ -6,13 +7,14 @@ body {
 
 h1,
 span {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: rgb(219, 219, 219)
 }
 
 .header,
 .footer,
 main {
-  width: 480px;
+  width: 530px;
   margin: 0 auto;
 }
 
@@ -21,7 +23,7 @@ main {
 }
 
 .main-text__textarea {
-  width: 475px;
+  width: 525px;
   height: 100px;
   border-radius: 5px 5px 0 5px;
   box-shadow: 0.3em 0.3em 1em rgba(0,0,0,0.3);
@@ -62,25 +64,43 @@ main {
 }
 
 .Backspace {
-  padding: 5px 2px;
+  padding: 5px 5px;
+}
+
+.CapsLock {
+  padding: 5px 0px;
 }
 
 .Enter {
-  padding: 5px 15px 5px 15px;
+  padding: 5px 14px;
 }
 
 .ShiftLeft,
 .ShiftRight {
-  padding: 5px 17.5px;
+  padding: 5px 13.5px;
 }
 
 .Space {
-  padding: 5px 72px;
+  padding: 5px 95px;
+}
+
+.ControlLeft,
+.ControlRight {
+  padding: 5px 3px;
+}
+
+.MetaLeft {
+  padding: 5px 1px;
+}
+
+.AltLeft,
+.AltRight {
+  padding: 5px 2px;
 }
 
 .ArrowRight,
 .ArrowLeft {
-  padding: 5px 3px;
+  padding: 5px 8px;
 }
 
 .Backspace,
