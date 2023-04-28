@@ -1,0 +1,388 @@
+{
+  "keys": [
+    {
+      "key": "`",
+      "code": "Backquote",
+      "keyCode": 192,
+      "label": "`"
+    },
+    {
+      "key": "1",
+      "code": "Digit1",
+      "keyCode": 49,
+      "label": "1"
+    },
+    {
+      "key": "2",
+      "code": "Digit2",
+      "keyCode": 50,
+      "label": "2"
+    },
+    {
+      "key": "3",
+      "code": "Digit3",
+      "keyCode": 51,
+      "label": "3"
+    },
+    {
+      "key": "4",
+      "code": "Digit4",
+      "keyCode": 52,
+      "label": "4"
+    },
+    {
+      "key": "5",
+      "code": "Digit5",
+      "keyCode": 53,
+      "label": "5"
+    },
+    {
+      "key": "6",
+      "code": "Digit6",
+      "keyCode": 54,
+      "label": "6"
+    },
+    {
+      "key": "7",
+      "code": "Digit7",
+      "keyCode": 55,
+      "label": "7"
+    },
+    {
+      "key": "8",
+      "code": "Digit8",
+      "keyCode": 56,
+      "label": "8"
+    },
+    {
+      "key": "9",
+      "code": "Digit9",
+      "keyCode": 57,
+      "label": "9"
+    },
+    {
+      "key": "0",
+      "code": "Digit0",
+      "keyCode": 48,
+      "label": "0"
+    },
+    {
+      "key": "-",
+      "code": "Minus",
+      "keyCode": 189,
+      "label": "-"
+    },
+    {
+      "key": "=",
+      "code": "Equal",
+      "keyCode": 187,
+      "label": "="
+    },
+    {
+      "key": "Backspace",
+      "code": "Backspace",
+      "keyCode": 8,
+      "label": "Backspace"
+    },
+    {
+      "key": "Tab",
+      "code": "Tab",
+      "keyCode": 9,
+      "label": "Tab"
+    },
+    {
+      "key": "q",
+      "code": "KeyQ",
+      "keyCode": 81,
+      "label": "q"
+    },
+    {
+      "key": "w",
+      "code": "KeyW",
+      "keyCode": 87,
+      "label": "w"
+    },
+    {
+      "key": "e",
+      "code": "KeyE",
+      "keyCode": 69,
+      "label": "e"
+    },
+    {
+      "key": "r",
+      "code": "KeyR",
+      "keyCode": 82,
+      "label": "r"
+    },
+    {
+      "key": "t",
+      "code": "KeyT",
+      "keyCode": 84,
+      "label": "t"
+    },
+    {
+      "key": "y",
+      "code": "KeyY",
+      "keyCode": 89,
+      "label": "y"
+    },
+    {
+      "key": "u",
+      "code": "KeyU",
+      "keyCode": 85,
+      "label": "u"
+    },
+    {
+      "key": "i",
+      "code": "KeyI",
+      "keyCode": 73,
+      "label": "i"
+    },
+    {
+      "key": "o",
+      "code": "KeyO",
+      "keyCode": 79,
+      "label": "o"
+    },
+    {
+      "key": "p",
+      "code": "KeyP",
+      "keyCode": 80,
+      "label": "p"
+    },
+    {
+      "key": "[",
+      "code": "BracketLeft",
+      "keyCode": 219,
+      "label": "["
+    },
+    {
+      "key": "]",
+      "code": "BracketRight",
+      "keyCode": 221,
+      "label": "]"
+    },
+    {
+      "key": "\\",
+      "code": "Backslash",
+      "keyCode": 220,
+      "label": "\\"
+    },
+    {
+      "key": "Del",
+      "code": "Delete",
+      "keyCode": 46,
+      "label": "Del"
+    },
+    {
+      "key": "CapsLock",
+      "code": "CapsLock",
+      "keyCode": 20,
+      "label": "CapsLock"
+    },
+    {
+      "key": "a",
+      "code": "KeyA",
+      "keyCode": 65,
+      "label": "a"
+    },
+    {
+      "key": "s",
+      "code": "KeyS",
+      "keyCode": 83,
+      "label": "s"
+    },
+    {
+      "key": "d",
+      "code": "KeyD",
+      "keyCode": 68,
+      "label": "d"
+    },
+    {
+      "key": "f",
+      "code": "KeyF",
+      "keyCode": 70,
+      "label": "f"
+    },
+    {
+      "key": "g",
+      "code": "KeyG",
+      "keyCode": 71,
+      "label": "g"
+    },
+    {
+      "key": "h",
+      "code": "KeyH",
+      "keyCode": 72,
+      "label": "h"
+    },
+    {
+      "key": "j",
+      "code": "KeyJ",
+      "keyCode": 74,
+      "label": "j"
+    },
+    {
+      "key": "k",
+      "code": "KeyK",
+      "keyCode": 75,
+      "label": "k"
+    },
+    {
+      "key": "l",
+      "code": "KeyL",
+      "keyCode": 76,
+      "label": "l"
+    },
+    {
+      "key": ";",
+      "code": "Semicolon",
+      "keyCode": 186,
+      "label": ";"
+    },
+    {
+      "key": "'",
+      "code": "Quote",
+      "keyCode": 222,
+      "label": "'"
+    },
+    {
+      "key": "Enter",
+      "code": "Enter",
+      "keyCode": 13,
+      "label": "Enter"
+    },
+    {
+      "key": "Shift",
+      "code": "ShiftLeft",
+      "keyCode": 16,
+      "label": "Shift"
+    },
+    {
+      "key": "z",
+      "code": "KeyZ",
+      "keyCode": 90,
+      "label": "z"
+    },
+    {
+      "key": "x",
+      "code": "KeyX",
+      "keyCode": 88,
+      "label": "x"
+    },
+    {
+      "key": "c",
+      "code": "KeyC",
+      "keyCode": 67,
+      "label": "c"
+    },
+    {
+      "key": "v",
+      "code": "KeyV",
+      "keyCode": 86,
+      "label": "v"
+    },
+    {
+      "key": "b",
+      "code": "KeyB",
+      "keyCode": 66,
+      "label": "b"
+    },
+    {
+      "key": "n",
+      "code": "KeyN",
+      "keyCode": 78,
+      "label": "n"
+    },
+    {
+      "key": "m",
+      "code": "KeyM",
+      "keyCode": 77,
+      "label": "m"
+    },
+    {
+      "key": ",",
+      "code": "Comma",
+      "keyCode": 188,
+      "label": ","
+    },
+    {
+      "key": ".",
+      "code": "Period",
+      "keyCode": 190,
+      "label": "."
+    },
+    {
+      "key": "/",
+      "code": "Slash",
+      "keyCode": 191,
+      "label": "/"
+    },
+    {
+      "key": "ArrowUp",
+      "code": "ArrowUp",
+      "keyCode": 38,
+      "label": "↑"
+    },
+    {
+      "key": "Shift",
+      "code": "ShiftRight",
+      "keyCode": 16,
+      "label": "Shift"
+    },
+    {
+      "key": "Control",
+      "code": "ControlLeft",
+      "keyCode": 17,
+      "label": "Ctrl"
+    },
+    {
+      "key": "Meta",
+      "code": "MetaLeft",
+      "keyCode": 91,
+      "label": "Win"
+    },
+    {
+      "key": "Alt",
+      "code": "AltLeft",
+      "keyCode": 18,
+      "label": "Alt"
+    },
+    {
+      "key": "spacebar",
+      "code": "Space",
+      "keyCode": 32,
+      "label": ""
+    },
+    {
+      "key": "Alt",
+      "code": "AltRight",
+      "keyCode": 18,
+      "label": "Alt"
+    },
+    {
+      "key": "ArrowLeft",
+      "code": "ArrowLeft",
+      "keyCode": 37,
+      "label": "←"
+    },
+    {
+      "key": "ArrowDown",
+      "code": "ArrowDown",
+      "keyCode": 40,
+      "label": "↓"
+    },
+    {
+      "key": "ArrowRight",
+      "code": "ArrowRight",
+      "keyCode": 39,
+      "label": "→"
+    },
+    {
+      "key": "Control",
+      "code": "ControlLeft",
+      "keyCode": 17,
+      "label": "Ctrl"
+    }
+  ]
+}
