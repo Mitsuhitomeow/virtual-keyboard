@@ -49,7 +49,6 @@ footerSection.appendChild(switchInfo);
 opSysInfoText.textContent = 'Клавиатура создана в операционной системе Windows';
 switchInfo.textContent = 'Для переключения языка комбинация: левыe ctrl + alt';
 
-
 // EXTRACTING KEY DATA (from keys.json)
 
 fetch('./keys.json')
