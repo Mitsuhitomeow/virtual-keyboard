@@ -3,6 +3,13 @@ body {
   padding: 0;
   margin: 0;
   background-color: rgb(141, 159, 165);
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .header-title,
@@ -128,11 +135,12 @@ main {
   border-color: black;
 }
 
-/* состояния клавиш при клике мышкой */
+/* для клавиш с активным состоянием */
 
-.main-keyboard__key:active {
+.main-keyboard__key:active,
+.main-keyboard__key.active {
   background-color: rgb(224, 224, 224);
-  transform: translateY(1px);
+  transform: translateY(2px);
   transition: .1s;
 }
 
@@ -151,19 +159,7 @@ main {
 .ArrowRight:active,
 .ArrowDown:active,
 .ArrowUp:active,
-.MetaLeft:active {
-  background-color: rgb(158, 192, 204);
-  color: rgb(91, 118, 128);
-}
-
-/* для событий меняющих класс на активное состояние */
-
-.main-keyboard__key.active {
-  background-color: rgb(224, 224, 224);
-  transform: translateY(1px);
-  transition: .1s;
-}
-
+.MetaLeft:active,
 .Backspace.active,
 .Tab.active,
 .Delete.active,
@@ -182,4 +178,10 @@ main {
 .MetaLeft.active {
   background-color: rgb(158, 192, 204);
   color: rgb(91, 118, 128);
+}
+
+/* скрыть клавиши */
+
+.hidden {
+  display: none;
 }
