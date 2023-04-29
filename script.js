@@ -49,7 +49,7 @@ footerSection.appendChild(switchInfo);
 opSysInfoText.textContent = 'Клавиатура создана в операционной системе Windows';
 switchInfo.textContent = 'Для переключения языка комбинация: левыe ctrl + alt';
 
-// EXTRACTING KEY DATA (from keys.json)
+// Извлечение данных клавиш (from keys.json)
 
 fetch('./keys.json')
   .then((response) => response.json())
@@ -59,30 +59,37 @@ fetch('./keys.json')
     keys.map((element) => {
       const key = document.createElement('div');
 
-      // добавили событие на клавиши (по клику на клавишу,
-      // происходит ввод текста клавиши)
-
-      key.addEventListener('click', () => {
-        textArea.value += element.key
-
-        // при нажатии на "Backspace" удаляет последний символ.
-        if (element.code == 'Backspace') {
-          let slicedLast = textArea.value
-          textArea.value = slicedLast.slice(0, -1)
-        }
-
-        // при нажатии на "Space" делает пробел.
-        if (element.code == 'Space') {
-          textArea.value += ' ';
-        }
-      })
-
       key.classList.add('main-keyboard__key');
       key.classList.add(`${element.code}`);
 
       keyboardSection.appendChild(key);
 
       key.textContent = element.label;
+
+      // добавляем событие на клавиши:
+      // 1.(по клику на клавишу, должеен происходить ввод текста клавиши)
+      // 2.(по клику на уникальную клавишу, должна происходить уникальная функциональность)
+
+      key.addEventListener('click', () => {
+        textArea.value += element.key;
+
+        // при нажатии на "Backspace" удаляет последний символ.
+        if (element.code === 'Backspace') {
+          const slicedLast = textArea.value;
+          textArea.value = slicedLast.slice(0, -1);
+        }
+
+        // при нажатии на "Space" или "Tab" делает пробел.
+        if (element.code === 'Space' || element.code === 'Tab') {
+          textArea.value += ' ';
+        }
+
+        // При нажатии на "Enter" осуществляется перенос строки.
+        if (element.code === 'Enter') {
+          textArea.value += '\n';
+        }
+      });
+
       return element;
     });
   })
