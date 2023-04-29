@@ -79,13 +79,13 @@
       "label": "="
     },
     {
-      "key": "Backspace",
+      "key": "",
       "code": "Backspace",
       "keyCode": 8,
       "label": "Backspace"
     },
     {
-      "key": "Tab",
+      "key": "",
       "code": "Tab",
       "keyCode": 9,
       "label": "Tab"
@@ -169,13 +169,13 @@
       "label": "\\"
     },
     {
-      "key": "Del",
+      "key": "",
       "code": "Delete",
       "keyCode": 46,
       "label": "Del"
     },
     {
-      "key": "CapsLock",
+      "key": "",
       "code": "CapsLock",
       "keyCode": 20,
       "label": "CapsLock"
@@ -247,13 +247,13 @@
       "label": "'"
     },
     {
-      "key": "Enter",
+      "key": "",
       "code": "Enter",
       "keyCode": 13,
       "label": "Enter"
     },
     {
-      "key": "Shift",
+      "key": "",
       "code": "ShiftLeft",
       "keyCode": 16,
       "label": "Shift"
@@ -319,67 +319,67 @@
       "label": "/"
     },
     {
-      "key": "ArrowUp",
+      "key": "",
       "code": "ArrowUp",
       "keyCode": 38,
       "label": "↑"
     },
     {
-      "key": "Shift",
+      "key": "",
       "code": "ShiftRight",
       "keyCode": 16,
       "label": "Shift"
     },
     {
-      "key": "Control",
+      "key": "",
       "code": "ControlLeft",
       "keyCode": 17,
       "label": "Ctrl"
     },
     {
-      "key": "Meta",
+      "key": "",
       "code": "MetaLeft",
       "keyCode": 91,
       "label": "Win"
     },
     {
-      "key": "Alt",
+      "key": "",
       "code": "AltLeft",
       "keyCode": 18,
       "label": "Alt"
     },
     {
-      "key": "spacebar",
+      "key": "",
       "code": "Space",
       "keyCode": 32,
       "label": ""
     },
     {
-      "key": "Alt",
+      "key": "",
       "code": "AltRight",
       "keyCode": 18,
       "label": "Alt"
     },
     {
-      "key": "ArrowLeft",
+      "key": "",
       "code": "ArrowLeft",
       "keyCode": 37,
       "label": "←"
     },
     {
-      "key": "ArrowDown",
+      "key": "",
       "code": "ArrowDown",
       "keyCode": 40,
       "label": "↓"
     },
     {
-      "key": "ArrowRight",
+      "key": "",
       "code": "ArrowRight",
       "keyCode": 39,
       "label": "→"
     },
     {
-      "key": "Control",
+      "key": "",
       "code": "ControlLeft",
       "keyCode": 17,
       "label": "Ctrl"
