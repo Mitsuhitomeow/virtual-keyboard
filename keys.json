@@ -1,388 +1,459 @@
 {
-  "keys": [
+  "KEYS": [
     {
       "key": "`",
       "code": "Backquote",
       "keyCode": 192,
-      "label": "`"
+      "labelEng": "`",
+      "labelRu": "ё"
     },
     {
       "key": "1",
       "code": "Digit1",
       "keyCode": 49,
-      "label": "1"
+      "labelEng": "1",
+      "labelRu": "1"
     },
     {
       "key": "2",
       "code": "Digit2",
       "keyCode": 50,
-      "label": "2"
+      "labelEng": "2",
+      "labelRu": "2"
     },
     {
       "key": "3",
       "code": "Digit3",
       "keyCode": 51,
-      "label": "3"
+      "labelEng": "3",
+      "labelRu": "3"
     },
     {
       "key": "4",
       "code": "Digit4",
       "keyCode": 52,
-      "label": "4"
+      "labelEng": "4",
+      "labelRu": "4"
     },
     {
       "key": "5",
       "code": "Digit5",
       "keyCode": 53,
-      "label": "5"
+      "labelEng": "5",
+      "labelRu": "5"
     },
     {
       "key": "6",
       "code": "Digit6",
       "keyCode": 54,
-      "label": "6"
+      "labelEng": "6",
+      "labelRu": "6"
     },
     {
       "key": "7",
       "code": "Digit7",
       "keyCode": 55,
-      "label": "7"
+      "labelEng": "7",
+      "labelRu": "7"
     },
     {
       "key": "8",
       "code": "Digit8",
       "keyCode": 56,
-      "label": "8"
+      "labelEng": "8",
+      "labelRu": "8"
     },
     {
       "key": "9",
       "code": "Digit9",
       "keyCode": 57,
-      "label": "9"
+      "labelEng": "9",
+      "labelRu": "9"
     },
     {
       "key": "0",
       "code": "Digit0",
       "keyCode": 48,
-      "label": "0"
+      "labelEng": "0",
+      "labelRu": "0"
     },
     {
       "key": "-",
       "code": "Minus",
       "keyCode": 189,
-      "label": "-"
+      "labelEng": "-",
+      "labelRu": "-"
     },
     {
       "key": "=",
       "code": "Equal",
       "keyCode": 187,
-      "label": "="
+      "labelEng": "=",
+      "labelRu": "="
     },
     {
       "key": "",
       "code": "Backspace",
       "keyCode": 8,
-      "label": "Backspace"
+      "labelEng": "Backspace",
+      "labelRu": "Backspace"
     },
     {
       "key": "",
       "code": "Tab",
       "keyCode": 9,
-      "label": "Tab"
+      "labelEng": "Tab",
+      "labelRu": "Tab"
     },
     {
       "key": "q",
       "code": "KeyQ",
       "keyCode": 81,
-      "label": "q"
+      "labelEng": "q",
+      "labelRu": "й"
     },
     {
       "key": "w",
       "code": "KeyW",
       "keyCode": 87,
-      "label": "w"
+      "labelEng": "w",
+      "labelRu": "ц"
     },
     {
       "key": "e",
       "code": "KeyE",
       "keyCode": 69,
-      "label": "e"
+      "labelEng": "e",
+      "labelRu": "у"
     },
     {
       "key": "r",
       "code": "KeyR",
       "keyCode": 82,
-      "label": "r"
+      "labelEng": "r",
+      "labelRu": "к"
     },
     {
       "key": "t",
       "code": "KeyT",
       "keyCode": 84,
-      "label": "t"
+      "labelEng": "t",
+      "labelRu": "е"
     },
     {
       "key": "y",
       "code": "KeyY",
       "keyCode": 89,
-      "label": "y"
+      "labelEng": "y",
+      "labelRu": "н"
     },
     {
       "key": "u",
       "code": "KeyU",
       "keyCode": 85,
-      "label": "u"
+      "labelEng": "u",
+      "labelRu": "г"
     },
     {
       "key": "i",
       "code": "KeyI",
       "keyCode": 73,
-      "label": "i"
+      "labelEng": "i",
+      "labelRu": "ш"
     },
     {
       "key": "o",
       "code": "KeyO",
       "keyCode": 79,
-      "label": "o"
+      "labelEng": "o",
+      "labelRu": "щ"
     },
     {
       "key": "p",
       "code": "KeyP",
       "keyCode": 80,
-      "label": "p"
+      "labelEng": "p",
+      "labelRu": "з"
     },
     {
       "key": "[",
       "code": "BracketLeft",
       "keyCode": 219,
-      "label": "["
+      "labelEng": "[",
+      "labelRu": "х"
     },
     {
       "key": "]",
       "code": "BracketRight",
       "keyCode": 221,
-      "label": "]"
+      "labelEng": "]",
+      "labelRu": "ъ"
     },
     {
       "key": "\\",
       "code": "Backslash",
       "keyCode": 220,
-      "label": "\\"
+      "labelEng": "\\",
+      "labelRu": "\\"
     },
     {
       "key": "",
       "code": "Delete",
       "keyCode": 46,
-      "label": "Del"
+      "labelEng": "Del",
+      "labelRu": "Del"
     },
     {
       "key": "",
       "code": "CapsLock",
       "keyCode": 20,
-      "label": "CapsLock"
+      "labelEng": "CapsLock",
+      "labelRu": "CapsLock",
+      "mod": "unique"
     },
     {
       "key": "a",
       "code": "KeyA",
       "keyCode": 65,
-      "label": "a"
+      "labelEng": "a",
+      "labelRu": "ф"
     },
     {
       "key": "s",
       "code": "KeyS",
       "keyCode": 83,
-      "label": "s"
+      "labelEng": "s",
+      "labelRu": "ы"
     },
     {
       "key": "d",
       "code": "KeyD",
       "keyCode": 68,
-      "label": "d"
+      "labelEng": "d",
+      "labelRu": "в"
     },
     {
       "key": "f",
       "code": "KeyF",
       "keyCode": 70,
-      "label": "f"
+      "labelEng": "f",
+      "labelRu": "а"
     },
     {
       "key": "g",
       "code": "KeyG",
       "keyCode": 71,
-      "label": "g"
+      "labelEng": "g",
+      "labelRu": "п"
     },
     {
       "key": "h",
       "code": "KeyH",
       "keyCode": 72,
-      "label": "h"
+      "labelEng": "h",
+      "labelRu": "р"
     },
     {
       "key": "j",
       "code": "KeyJ",
       "keyCode": 74,
-      "label": "j"
+      "labelEng": "j",
+      "labelRu": "о"
     },
     {
       "key": "k",
       "code": "KeyK",
       "keyCode": 75,
-      "label": "k"
+      "labelEng": "k",
+      "labelRu": "л"
     },
     {
       "key": "l",
       "code": "KeyL",
       "keyCode": 76,
-      "label": "l"
+      "labelEng": "l",
+      "labelRu": "д"
     },
     {
       "key": ";",
       "code": "Semicolon",
       "keyCode": 186,
-      "label": ";"
+      "labelEng": ";",
+      "labelRu": "ж"
     },
     {
       "key": "'",
       "code": "Quote",
       "keyCode": 222,
-      "label": "'"
+      "labelEng": "'",
+      "labelRu": "э"
     },
     {
       "key": "",
       "code": "Enter",
       "keyCode": 13,
-      "label": "Enter"
+      "labelEng": "Enter",
+      "labelRu": "Enter"
     },
     {
       "key": "",
       "code": "ShiftLeft",
       "keyCode": 16,
-      "label": "Shift"
+      "labelEng": "Shift",
+      "labelRu": "Shift",
+      "mod": "unique"
     },
     {
       "key": "z",
       "code": "KeyZ",
       "keyCode": 90,
-      "label": "z"
+      "labelEng": "z",
+      "labelRu": "я"
     },
     {
       "key": "x",
       "code": "KeyX",
       "keyCode": 88,
-      "label": "x"
+      "labelEng": "x",
+      "labelRu": "ч"
     },
     {
       "key": "c",
       "code": "KeyC",
       "keyCode": 67,
-      "label": "c"
+      "labelEng": "c",
+      "labelRu": "с"
     },
     {
       "key": "v",
       "code": "KeyV",
       "keyCode": 86,
-      "label": "v"
+      "labelEng": "v",
+      "labelRu": "м"
     },
     {
       "key": "b",
       "code": "KeyB",
       "keyCode": 66,
-      "label": "b"
+      "labelEng": "b",
+      "labelRu": "и"
     },
     {
       "key": "n",
       "code": "KeyN",
       "keyCode": 78,
-      "label": "n"
+      "labelEng": "n",
+      "labelRu": "т"
     },
     {
       "key": "m",
       "code": "KeyM",
       "keyCode": 77,
-      "label": "m"
+      "labelEng": "m",
+      "labelRu": "ь"
     },
     {
       "key": ",",
       "code": "Comma",
       "keyCode": 188,
-      "label": ","
+      "labelEng": ",",
+      "labelRu": "б"
     },
     {
       "key": ".",
       "code": "Period",
       "keyCode": 190,
-      "label": "."
+      "labelEng": ".",
+      "labelRu": "ю"
     },
     {
       "key": "/",
       "code": "Slash",
       "keyCode": 191,
-      "label": "/"
+      "labelEng": "/",
+      "labelRu": "."
     },
     {
       "key": "",
       "code": "ArrowUp",
       "keyCode": 38,
-      "label": "↑"
+      "labelEng": "↑",
+      "labelRu": "↑"
     },
     {
       "key": "",
       "code": "ShiftRight",
       "keyCode": 16,
-      "label": "Shift"
+      "labelEng": "Shift",
+      "labelRu": "Shift",
+      "mod": "unique"
     },
     {
       "key": "",
       "code": "ControlLeft",
       "keyCode": 17,
-      "label": "Ctrl"
+      "labelEng": "Ctrl",
+      "labelRu": "Ctrl",
+      "mod": "unique"
     },
     {
       "key": "",
       "code": "MetaLeft",
       "keyCode": 91,
-      "label": "Win"
+      "labelEng": "Win",
+      "labelRu": "Win"
     },
     {
       "key": "",
       "code": "AltLeft",
       "keyCode": 18,
-      "label": "Alt"
+      "labelEng": "Alt",
+      "labelRu": "Alt",
+      "mod": "unique"
     },
     {
       "key": "",
       "code": "Space",
       "keyCode": 32,
-      "label": ""
+      "labelEng": "",
+      "labelRu": ""
     },
     {
       "key": "",
       "code": "AltRight",
       "keyCode": 18,
-      "label": "Alt"
+      "labelEng": "Alt",
+      "labelRu": "Alt",
+      "mod": "unique"
     },
     {
       "key": "",
       "code": "ArrowLeft",
       "keyCode": 37,
-      "label": "←"
+      "labelEng": "←",
+      "labelRu": "←"
     },
     {
       "key": "",
       "code": "ArrowDown",
       "keyCode": 40,
-      "label": "↓"
+      "labelEng": "↓",
+      "labelRu": "↓"
     },
     {
       "key": "",
       "code": "ArrowRight",
       "keyCode": 39,
-      "label": "→"
+      "labelEng": "→",
+      "labelRu": "→"
     },
     {
       "key": "",
-      "code": "ControlLeft",
+      "code": "ControlRight",
       "keyCode": 17,
-      "label": "Ctrl"
+      "labelEng": "Ctrl",
+      "labelRu": "Ctrl",
+      "mod": "unique"
     }
   ]
 }
