@@ -5,8 +5,8 @@ body {
   background-color: rgb(141, 159, 165);
 }
 
-h1,
-span {
+.header-title,
+.footer-info__span {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: rgb(219, 219, 219)
 }
