@@ -59,6 +59,24 @@ fetch('./keys.json')
     keys.map((element) => {
       const key = document.createElement('div');
 
+      // добавили событие на клавиши (по клику на клавишу,
+      // происходит ввод текста клавиши)
+
+      key.addEventListener('click', () => {
+        textArea.value += element.key
+
+        // при нажатии на "Backspace" удаляет последний символ.
+        if (element.code == 'Backspace') {
+          let slicedLast = textArea.value
+          textArea.value = slicedLast.slice(0, -1)
+        }
+
+        // при нажатии на "Space" делает пробел.
+        if (element.code == 'Space') {
+          textArea.value += ' ';
+        }
+      })
+
       key.classList.add('main-keyboard__key');
       key.classList.add(`${element.code}`);
 
