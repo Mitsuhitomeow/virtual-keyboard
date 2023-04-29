@@ -47,31 +47,50 @@ footerSection.appendChild(opSysInfoText);
 footerSection.appendChild(switchInfo);
 
 opSysInfoText.textContent = 'Клавиатура создана в операционной системе Windows';
-switchInfo.textContent = 'Для переключения языка комбинация: левыe ctrl + alt';
+switchInfo.textContent = 'Для переключения языка комбинация: левыe Ctrl + Shift';
 
 // Извлечение данных клавиш (from keys.json)
 
 fetch('./keys.json')
   .then((response) => response.json())
   .then((data) => {
-    const { keys } = data;
+    const { KEYS } = data;
 
-    keys.map((element) => {
-      const key = document.createElement('div');
+    KEYS.map((element) => {
+      const KEY = document.createElement('div');
+      const KEY_ENG = document.createElement('span');
+      const KEY_RU = document.createElement('span');
 
-      key.classList.add('main-keyboard__key');
-      key.classList.add(`${element.code}`);
+      KEY.classList.add('main-keyboard__key');
+      KEY.classList.add(`${element.code}`);
+      KEY_ENG.classList.add('key-eng');
+      KEY_RU.classList.add('key-ru');
 
-      keyboardSection.appendChild(key);
+      KEY_RU.classList.add('hidden'); // СКРЫВАЕТ РУССКИЕ БУКВЫ
 
-      key.textContent = element.label;
+      keyboardSection.appendChild(KEY);
+      KEY.appendChild(KEY_ENG);
+      KEY.appendChild(KEY_RU);
+
+      KEY_ENG.textContent = element.labelEng;
+      KEY_RU.textContent = element.labelEng;
+
+      // document.onkeypress = function (e) {
+      //   console.log(e.keyCode);
+      //   console.log(e.key)
+      //   console.log(e.code)
+      // }
 
       // добавляем событие на клавиши:
       // 1.(по клику на клавишу, должеен происходить ввод текста клавиши)
       // 2.(по клику на уникальную клавишу, должна происходить уникальная функциональность)
 
-      key.addEventListener('click', () => {
+      KEY.addEventListener('click', () => {
         textArea.value += element.key;
+
+        if (element.mod === 'unique') {
+          KEY.classList.toggle('active');
+        }
 
         // при нажатии на "Backspace" удаляет последний символ.
         if (element.code === 'Backspace') {
