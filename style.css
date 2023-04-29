@@ -22,6 +22,14 @@ main {
   text-align: center;
 }
 
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* область поля для текста и клавиатура */
+
 .main-text__textarea {
   width: 525px;
   height: 100px;
@@ -57,11 +65,7 @@ main {
   margin: 2px;
 }
 
-.main-keyboard__key:active {
-  background-color: rgb(224, 224, 224);
-  transform: translateY(1px);
-  transition: .1s;
-}
+/* стили для уникальных клавиш */
 
 .Backspace {
   padding: 5px 5px;
@@ -124,6 +128,14 @@ main {
   border-color: black;
 }
 
+/* состояния клавиш при клике мышкой */
+
+.main-keyboard__key:active {
+  background-color: rgb(224, 224, 224);
+  transform: translateY(1px);
+  transition: .1s;
+}
+
 .Backspace:active,
 .Tab:active,
 .Delete:active,
@@ -140,11 +152,34 @@ main {
 .ArrowDown:active,
 .ArrowUp:active,
 .MetaLeft:active {
-  background-color: rgb(113, 138, 146);
+  background-color: rgb(158, 192, 204);
+  color: rgb(91, 118, 128);
 }
 
-.footer-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* для событий меняющих класс на активное состояние */
+
+.main-keyboard__key.active {
+  background-color: rgb(224, 224, 224);
+  transform: translateY(1px);
+  transition: .1s;
+}
+
+.Backspace.active,
+.Tab.active,
+.Delete.active,
+.CapsLock.active,
+.Enter.active,
+.ShiftLeft.active,
+.ShiftRight.active,
+.ControlRight.active,
+.ControlLeft.active,
+.AltRight.active,
+.AltLeft.active,
+.ArrowLeft.active,
+.ArrowRight.active,
+.ArrowDown.active,
+.ArrowUp.active,
+.MetaLeft.active {
+  background-color: rgb(158, 192, 204);
+  color: rgb(91, 118, 128);
 }
