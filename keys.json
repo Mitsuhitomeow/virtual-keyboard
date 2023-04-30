@@ -96,14 +96,16 @@
       "code": "Backspace",
       "keyCode": 8,
       "labelEng": "Backspace",
-      "labelRu": "Backspace"
+      "labelRu": "Backspace",
+      "noTyping": true
     },
     {
       "key": "",
       "code": "Tab",
       "keyCode": 9,
       "labelEng": "Tab",
-      "labelRu": "Tab"
+      "labelRu": "Tab",
+      "noTyping": true
     },
     {
       "key": "q",
@@ -201,7 +203,8 @@
       "code": "Delete",
       "keyCode": 46,
       "labelEng": "Del",
-      "labelRu": "Del"
+      "labelRu": "Del",
+      "noTyping": true
     },
     {
       "key": "",
@@ -209,7 +212,8 @@
       "keyCode": 20,
       "labelEng": "CapsLock",
       "labelRu": "CapsLock",
-      "mod": "unique"
+      "mod": "unique",
+      "noTyping": true
     },
     {
       "key": "a",
@@ -293,7 +297,8 @@
       "code": "Enter",
       "keyCode": 13,
       "labelEng": "Enter",
-      "labelRu": "Enter"
+      "labelRu": "Enter",
+      "noTyping": true
     },
     {
       "key": "",
@@ -301,7 +306,8 @@
       "keyCode": 16,
       "labelEng": "Shift",
       "labelRu": "Shift",
-      "mod": "unique"
+      "mod": "unique",
+      "noTyping": true
     },
     {
       "key": "z",
@@ -378,7 +384,8 @@
       "code": "ArrowUp",
       "keyCode": 38,
       "labelEng": "↑",
-      "labelRu": "↑"
+      "labelRu": "↑",
+      "noTyping": true
     },
     {
       "key": "",
@@ -386,7 +393,8 @@
       "keyCode": 16,
       "labelEng": "Shift",
       "labelRu": "Shift",
-      "mod": "unique"
+      "mod": "unique",
+      "noTyping": true
     },
     {
       "key": "",
@@ -394,14 +402,16 @@
       "keyCode": 17,
       "labelEng": "Ctrl",
       "labelRu": "Ctrl",
-      "mod": "unique"
+      "mod": "unique",
+      "noTyping": true
     },
     {
       "key": "",
       "code": "MetaLeft",
       "keyCode": 91,
       "labelEng": "Win",
-      "labelRu": "Win"
+      "labelRu": "Win",
+      "noTyping": true
     },
     {
       "key": "",
@@ -416,7 +426,8 @@
       "code": "Space",
       "keyCode": 32,
       "labelEng": "",
-      "labelRu": ""
+      "labelRu": "",
+      "noTyping": true
     },
     {
       "key": "",
@@ -424,28 +435,32 @@
       "keyCode": 18,
       "labelEng": "Alt",
       "labelRu": "Alt",
-      "mod": "unique"
+      "mod": "unique",
+      "noTyping": true
     },
     {
       "key": "",
       "code": "ArrowLeft",
       "keyCode": 37,
       "labelEng": "←",
-      "labelRu": "←"
+      "labelRu": "←",
+      "noTyping": true
     },
     {
       "key": "",
       "code": "ArrowDown",
       "keyCode": 40,
       "labelEng": "↓",
-      "labelRu": "↓"
+      "labelRu": "↓",
+      "noTyping": true
     },
     {
       "key": "",
       "code": "ArrowRight",
       "keyCode": 39,
       "labelEng": "→",
-      "labelRu": "→"
+      "labelRu": "→",
+      "noTyping": true
     },
     {
       "key": "",
@@ -453,7 +468,8 @@
       "keyCode": 17,
       "labelEng": "Ctrl",
       "labelRu": "Ctrl",
-      "mod": "unique"
+      "mod": "unique",
+      "noTyping": true
     }
   ]
 }
