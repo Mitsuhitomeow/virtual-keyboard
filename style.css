@@ -38,12 +38,16 @@ main {
 /* область поля для текста и клавиатура */
 
 .main-text__textarea {
-  width: 525px;
-  height: 100px;
+  border-color: black;
   border-radius: 5px 5px 0 5px;
   box-shadow: 0.3em 0.3em 1em rgba(0,0,0,0.3);
+  color: rgb(0, 68, 255);
+  font-family:'Courier New', Courier, monospace;
+  font-size: 18px;
 
   margin: 0 0 15px 0;
+  width: 525px;
+  height: 100px;
 }
 
 .main-keyboard {
