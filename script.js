@@ -60,20 +60,30 @@ fetch('./keys.json')
       const KEY = document.createElement('div');
       const KEY_ENG = document.createElement('span');
       const KEY_RU = document.createElement('span');
+      const KEY_ENG_TO_UPPER = document.createElement('span');
+      const KEY_RU_TO_UPPER = document.createElement('span');
 
       KEY.classList.add('main-keyboard__key');
       KEY.classList.add(`${element.code}`);
       KEY_ENG.classList.add('key-eng');
       KEY_RU.classList.add('key-ru');
+      KEY_ENG_TO_UPPER.classList.add('key-eng__toUpperCase');
+      KEY_RU_TO_UPPER.classList.add('key-ru__toUpperCase');
 
+      KEY_ENG_TO_UPPER.classList.add('hidden');
+      KEY_RU_TO_UPPER.classList.add('hidden');
       KEY_RU.classList.add('hidden'); // СКРЫВАЕТ РУССКИЕ БУКВЫ
 
       keyboardSection.appendChild(KEY);
       KEY.appendChild(KEY_ENG);
       KEY.appendChild(KEY_RU);
+      KEY.appendChild(KEY_ENG_TO_UPPER);
+      KEY.appendChild(KEY_RU_TO_UPPER);
 
       KEY_ENG.textContent = element.labelEng;
-      KEY_RU.textContent = element.labelEng;
+      KEY_RU.textContent = element.labelRu;
+      KEY_ENG_TO_UPPER.textContent = element.labelEng.toUpperCase();
+      KEY_RU_TO_UPPER.textContent = element.labelRu.toUpperCase();
 
       // document.onkeypress = function (event) {
       //   console.log(event.keyCode);
@@ -122,49 +132,58 @@ fetch('./keys.json')
       return element;
     });
 
-    // Добавил события клавиш
-
-    document.addEventListener('keydown', function (event) {
-      // console.log(event.keyCode)
+    // Добавил события клавиш их функционал и класс "active" (анимацию)
+    document.addEventListener('keydown', (event) => {
+      // console.log(event.keyCode);
       event.preventDefault();
 
-      // при нажатии на "Space" или "Tab" делает пробел.
+      // все клавиши что соответствуют данным из json, выводятся в "textarea"
+      KEYS.forEach((element) => {
+        if (event.key === element.key) {
+          textArea.value += event.key;
+        }
+      });
+
+      // при нажатии вешаю класс с подсвечиванием клавиши кроме "CapsLock"
+      KEYS.forEach((element) => {
+        if (event.code === element.code && event.keyCode !== 20) {
+          const KEY = document.querySelector(`.${element.code}`);
+          KEY.classList.add('active');
+        }
+      });
+
+      // При нажатии на "CapsLock" вешается класс active (включается подсветка клавиши)
+      // повторное нажатие убирает класс и выключает подсветку.
+      if (event.keyCode === 20) {
+        const KEY_CAPS = document.querySelector('.CapsLock');
+        KEY_CAPS.classList.toggle('active');
+      }
+
+      // при нажатии на "Space" или "Tab" делает отступ.
       if (event.keyCode === 32 || event.code === 'Tab') {
-        textArea.value += ' '
+        textArea.value += ' ';
       }
 
       // при нажатии на "Backspace" удаляет последний символ.
       if (event.keyCode === 8) {
-        let lastSliced = textArea.value;
-        textArea.value = lastSliced.slice(0, -1)
+        const lastSliced = textArea.value;
+        textArea.value = lastSliced.slice(0, -1);
       }
 
       // При нажатии на "Enter" осуществляется перенос строки.
       if (event.code === 'Enter') {
         textArea.value += '\n';
       }
+    });
 
-      // Ввод текста по нажатию клавишь на реальной клавиатуре.
+    // Убираем класс "active" при отжатии клавиши (клавиша становится по умолчанию)
+    document.addEventListener('keyup', (event) => {
       KEYS.forEach((element) => {
-        const KEY = document.createElement('div');
-        KEY.classList.add('active')
-
-        if (event.key === element.key) {
-          textArea.value += event.key
+        if (event.code === element.code && event.keyCode !== 20) {
+          const KEY = document.querySelector(`.${element.code}`);
+          KEY.classList.remove('active');
         }
-      })
-    })
-
-    // let r = [8, 9, 13, 16, 17, 18, 20, 91]
-    // document.addEventListener('keydown', function (event) {
-    //   console.log(event)
-    //   console.log(event.keyCode)
-    //   if (event.keyCode === 20) {
-    //     let lastSlicedtextArea.value;
-    //     lastSliced.slice(0, -1);
-    //   } else if (event.keyCode == 1) {
-    //     textArea.value += event.key
-    //   }
-    // })
+      });
+    });
   })
   .catch((error) => console.error('Ошибка данных', error));
