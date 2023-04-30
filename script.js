@@ -56,7 +56,7 @@ fetch('./keys.json')
   .then((data) => {
     const { KEYS } = data;
 
-    KEYS.map((element) => {
+    KEYS.forEach((element) => {
       const KEY = document.createElement('div');
       const KEY_ENG = document.createElement('span');
       const KEY_RU = document.createElement('span');
@@ -75,10 +75,20 @@ fetch('./keys.json')
       KEY_ENG.textContent = element.labelEng;
       KEY_RU.textContent = element.labelEng;
 
-      // document.onkeypress = function (e) {
-      //   console.log(e.keyCode);
-      //   console.log(e.key)
-      //   console.log(e.code)
+      // document.onkeypress = function (event) {
+      //   console.log(event.keyCode);
+      //   console.log(event.key)
+      //   console.log(event.code)
+      //   if(event.keycode === 96) {
+      //     textArea.value += element.key
+      //   }
+      // }
+
+      // document.onkeypress = function (event) {
+
+      //   if (event.keycode === 20) {
+      //     KEY.classList.add('active')
+      //   }
       // }
 
       // добавляем событие на клавиши:
@@ -111,5 +121,50 @@ fetch('./keys.json')
 
       return element;
     });
+
+    // Добавил события клавиш
+
+    document.addEventListener('keydown', function (event) {
+      // console.log(event.keyCode)
+      event.preventDefault();
+
+      // при нажатии на "Space" или "Tab" делает пробел.
+      if (event.keyCode === 32 || event.code === 'Tab') {
+        textArea.value += ' '
+      }
+
+      // при нажатии на "Backspace" удаляет последний символ.
+      if (event.keyCode === 8) {
+        let lastSliced = textArea.value;
+        textArea.value = lastSliced.slice(0, -1)
+      }
+
+      // При нажатии на "Enter" осуществляется перенос строки.
+      if (event.code === 'Enter') {
+        textArea.value += '\n';
+      }
+
+      // Ввод текста по нажатию клавишь на реальной клавиатуре.
+      KEYS.forEach((element) => {
+        const KEY = document.createElement('div');
+        KEY.classList.add('active')
+
+        if (event.key === element.key) {
+          textArea.value += event.key
+        }
+      })
+    })
+
+    // let r = [8, 9, 13, 16, 17, 18, 20, 91]
+    // document.addEventListener('keydown', function (event) {
+    //   console.log(event)
+    //   console.log(event.keyCode)
+    //   if (event.keyCode === 20) {
+    //     let lastSlicedtextArea.value;
+    //     lastSliced.slice(0, -1);
+    //   } else if (event.keyCode == 1) {
+    //     textArea.value += event.key
+    //   }
+    // })
   })
   .catch((error) => console.error('Ошибка данных', error));
