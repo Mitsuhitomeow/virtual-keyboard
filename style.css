@@ -18,14 +18,19 @@ body {
   color: rgb(219, 219, 219)
 }
 
+.header-title {
+  font-size: 50px;
+}
+
 .footer-info__p {
+  font-size: 30px;
   margin: 5px;
 }
 
 .header,
 .footer,
 main {
-  width: 530px;
+  width: 850px;
   margin: 0 auto;
 }
 
@@ -50,8 +55,8 @@ main {
   font-size: 18px;
 
   margin: 0 0 15px 0;
-  width: 525px;
-  height: 100px;
+  width: 845px;
+  height: 150px;
 }
 
 .main-keyboard {
@@ -60,7 +65,7 @@ main {
   border-radius: 5px;
   box-shadow: 0.3em 0.3em 1em rgba(0,0,0,0.5);
 
-  padding: 5px;
+  padding: 8px 0;
   margin: 0 0 20px 0;
 
   display: flex;
@@ -75,51 +80,55 @@ main {
   box-shadow: 1.5px 1.5px rgb(172, 172, 172);
   cursor: pointer;
   transition: .1s;
+  font-size: 20px;
 
-  padding: 5px 8px 5px 8px;
+  display: flex;
+  align-items: center;
+
+  padding: 12px 17px;
   margin: 2px;
 }
 
 /* стили для уникальных клавиш */
 
 .Backspace {
-  padding: 5px 5px;
+  padding: 5px 19px;
 }
 
 .CapsLock {
-  padding: 5px 0px;
+  padding: 5px 13px;
 }
 
 .Enter {
-  padding: 5px 14px;
+  padding: 5px 31px;
 }
 
 .ShiftLeft,
 .ShiftRight {
-  padding: 5px 13.5px;
+  padding: 5px 31px;
 }
 
 .Space {
-  padding: 5px 95px;
+  padding: 5px 172px;
 }
 
 .ControlLeft,
 .ControlRight {
-  padding: 5px 3px;
+  padding: 5px 12px;
 }
 
 .MetaLeft {
-  padding: 5px 1px;
+  padding: 5px 6px;
 }
 
 .AltLeft,
 .AltRight {
-  padding: 5px 2px;
+  padding: 5px 8px;
 }
 
 .ArrowRight,
 .ArrowLeft {
-  padding: 5px 8px;
+  padding: 5px 16px;
 }
 
 .Backspace,
