@@ -103,8 +103,14 @@ fetch('./keys.json')
       *   при нажатии на клавиши с буквами, выводятся на текстовое поле
       *   если "CapsLock" активен, буквы меняют регистр.
       */
+
+      // При клике на левый "Shift" клавиша переходит в состояние active
+      /*
+      *  В этом состоянии клавиши меняют символы и регистр
+      */
       KEY.addEventListener('click', () => {
         const KEY_CAPS = document.querySelector('.CapsLock');
+        const KEY_SHIFT = document.querySelector('.ShiftLeft');
 
         if (
           element.code !== 'Enter'
@@ -124,6 +130,7 @@ fetch('./keys.json')
           && element.code !== 'CapsLock'
           && element.code !== 'MetaLeft'
           && !KEY_CAPS.classList.contains('active')
+          && !KEY_SHIFT.classList.contains('active')
         ) {
           textArea.value += element.labelEng;
         } else if (
@@ -146,8 +153,29 @@ fetch('./keys.json')
           && KEY_CAPS.classList.contains('active')
         ) {
           textArea.value += element.engCaps;
+        } else if (
+          element.code !== 'Enter'
+          && element.code !== 'Backspace'
+          && element.code !== 'Delete'
+          && element.code !== 'Tab'
+          && element.code !== 'ShiftLeft'
+          && element.code !== 'ShiftRight'
+          && element.code !== 'ControlLeft'
+          && element.code !== 'ControlRight'
+          && element.code !== 'AltLeft'
+          && element.code !== 'AltRight'
+          && element.code !== 'ArrowUp'
+          && element.code !== 'ArrowDown'
+          && element.code !== 'ArrowLeft'
+          && element.code !== 'ArrowRight'
+          && element.code !== 'CapsLock'
+          && element.code !== 'MetaLeft'
+          && KEY_SHIFT.classList.contains('active')
+        ) {
+          textArea.value += element.engShift;
         }
 
+        // добавил функционал для capslock
         if (element.keyCode === 20) {
           KEY_CAPS.classList.toggle('active');
 
@@ -165,6 +193,35 @@ fetch('./keys.json')
 
             KEY_ENG_CAPS_CLICK.forEach((key) => key.classList.add('hidden'));
             KEY_ENG_CLICK.forEach((key) => key.classList.remove('hidden'));
+          }
+        }
+
+        // Добавил функционал для Shift left
+        if (element.keyCode === 16) {
+          KEY_SHIFT.classList.toggle('active');
+
+          if (KEY_SHIFT.classList.contains('active')) {
+            const SPAN = document.querySelectorAll('span');
+
+            SPAN.forEach((key) => {
+              if (key.classList.contains('key-eng')) {
+                key.classList.add('hidden');
+              }
+              if (key.classList.contains('key-eng__Shift')) {
+                key.classList.remove('hidden');
+              }
+            });
+          } else if (!KEY_SHIFT.classList.contains('active')) {
+            const SPAN = document.querySelectorAll('span');
+
+            SPAN.forEach((key) => {
+              if (key.classList.contains('key-eng__Shift')) {
+                key.classList.add('hidden');
+              }
+              if (key.classList.contains('key-eng')) {
+                key.classList.remove('hidden');
+              }
+            });
           }
         }
 
@@ -189,6 +246,8 @@ fetch('./keys.json')
     // Добавил события клавиш их функционал и класс "active" (анимацию)
     document.addEventListener('keydown', (event) => {
       // console.log(event.key);
+      // console.log(event.keyCode)
+
       event.preventDefault();
 
       // При нажатии на "CapsLock" клавиши преходят в верхний регистр,
@@ -196,8 +255,14 @@ fetch('./keys.json')
       *   при нажатии на клавиши с буквами, выводятся на текстовое поле
       *   если "CapsLock" активен, буквы меняют регистр.
       */
+
+      // При зажатом левым "Shift" клавиша переходит в состояние active
+      /*
+      *  В этом состоянии клавиши меняют символы и регистр
+      */
       KEYS.forEach((element) => {
         const KEY_CAPS = document.querySelector('.CapsLock');
+        const KEY_SHIFT = document.querySelector('.ShiftLeft');
 
         if (event.key === element.labelEng
           && event.code !== 'Enter'
@@ -238,6 +303,26 @@ fetch('./keys.json')
           && KEY_CAPS.classList.contains('active')
         ) {
           textArea.value += element.engCaps;
+        } else if (event.key === element.engShift
+          && event.code !== 'Enter'
+          && event.code !== 'Backspace'
+          && event.code !== 'Delete'
+          && event.code !== 'Tab'
+          && event.code !== 'ShiftLeft'
+          && event.code !== 'ShiftRight'
+          && event.code !== 'ControlLeft'
+          && event.code !== 'ControlRight'
+          && event.code !== 'AltLeft'
+          && event.code !== 'AltRight'
+          && event.code !== 'ArrowUp'
+          && event.code !== 'ArrowDown'
+          && event.code !== 'ArrowLeft'
+          && event.code !== 'ArrowRight'
+          && event.code !== 'CapsLock'
+          && event.code !== 'MetaLeft'
+          && KEY_SHIFT.classList.contains('active')
+        ) {
+          textArea.value += element.engShift;
         }
 
         if (event.code === element.code && event.keyCode !== 20) {
@@ -246,6 +331,7 @@ fetch('./keys.json')
         }
       });
 
+      // добавил функционал для "caps lock"
       if (event.keyCode === 20) {
         const KEY_CAPS = document.querySelector('.CapsLock');
         KEY_CAPS.classList.toggle('active');
@@ -265,6 +351,23 @@ fetch('./keys.json')
           KEY_ENG_CAPS.forEach((element) => element.classList.add('hidden'));
           KEY_ENG.forEach((element) => element.classList.remove('hidden'));
         }
+      }
+
+      // добавил функционал для "Shift left"
+      if (event.code === 'ShiftLeft') {
+        const KEY_SHIFT = document.querySelector('.ShiftLeft');
+
+        KEY_SHIFT.classList.add('active');
+
+        const SPAN = document.querySelectorAll('span');
+        SPAN.forEach((key) => {
+          if (key.classList.contains('key-eng')) {
+            key.classList.add('hidden');
+          }
+          if (key.classList.contains('key-eng__Shift')) {
+            key.classList.remove('hidden');
+          }
+        });
       }
 
       // при нажатии на "Space" или "Tab" делает отступ.
@@ -290,6 +393,18 @@ fetch('./keys.json')
         if (event.code === element.code && event.keyCode !== 20) {
           const KEY = document.querySelector(`.${element.code}`);
           KEY.classList.remove('active');
+        }
+
+        if (event.code === 'ShiftLeft') {
+          const SPAN = document.querySelectorAll('span');
+          SPAN.forEach((key) => {
+            if (key.classList.contains('key-eng__Shift')) {
+              key.classList.add('hidden');
+            }
+            if (key.classList.contains('key-eng')) {
+              key.classList.remove('hidden');
+            }
+          });
         }
       });
     });
