@@ -1,0 +1,195 @@
+body {
+  font-family:'Courier New', Courier, monospace;
+  padding: 0;
+  margin: 0;
+  background-color: rgb(141, 159, 165);
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.header-title,
+.footer-info__p {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: rgb(219, 219, 219)
+}
+
+.footer-info__p {
+  margin: 5px;
+}
+
+.header,
+.footer,
+main {
+  width: 530px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* область поля для текста и клавиатура */
+
+.main-text__textarea {
+  border-color: black;
+  border-radius: 5px 5px 0 5px;
+  box-shadow: 0.3em 0.3em 1em rgba(0,0,0,0.3);
+  color: rgb(0, 68, 255);
+  font-family:'Courier New', Courier, monospace;
+  font-size: 18px;
+
+  margin: 0 0 15px 0;
+  width: 525px;
+  height: 100px;
+}
+
+.main-keyboard {
+  background-color: rgb(218, 218, 218);
+  border: 1px solid;
+  border-radius: 5px;
+  box-shadow: 0.3em 0.3em 1em rgba(0,0,0,0.5);
+
+  padding: 5px;
+  margin: 0 0 20px 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.main-keyboard__key {
+  background-color: rgb(197, 197, 197);
+  border: 1px solid;
+  border-radius: 5px;
+  box-shadow: 1.5px 1.5px rgb(172, 172, 172);
+  cursor: pointer;
+  transition: .1s;
+
+  padding: 5px 8px 5px 8px;
+  margin: 2px;
+}
+
+/* стили для уникальных клавиш */
+
+.Backspace {
+  padding: 5px 5px;
+}
+
+.CapsLock {
+  padding: 5px 0px;
+}
+
+.Enter {
+  padding: 5px 14px;
+}
+
+.ShiftLeft,
+.ShiftRight {
+  padding: 5px 13.5px;
+}
+
+.Space {
+  padding: 5px 95px;
+}
+
+.ControlLeft,
+.ControlRight {
+  padding: 5px 3px;
+}
+
+.MetaLeft {
+  padding: 5px 1px;
+}
+
+.AltLeft,
+.AltRight {
+  padding: 5px 2px;
+}
+
+.ArrowRight,
+.ArrowLeft {
+  padding: 5px 8px;
+}
+
+.Backspace,
+.Tab,
+.Delete,
+.CapsLock,
+.Enter,
+.ShiftLeft,
+.ShiftRight,
+.ControlRight,
+.ControlLeft,
+.AltRight,
+.AltLeft,
+.ArrowLeft,
+.ArrowRight,
+.ArrowDown,
+.ArrowUp,
+.MetaLeft {
+  color: rgb(219, 219, 219);
+  background-color: rgb(91, 118, 128);
+  border-color: black;
+}
+
+/* для клавиш с активным состоянием */
+
+.main-keyboard__key:active,
+.main-keyboard__key.active {
+  background-color: rgb(224, 224, 224);
+  transform: translateY(2px);
+  transition: .1s;
+}
+
+.Backspace:active,
+.Tab:active,
+.Delete:active,
+.CapsLock:active,
+.Enter:active,
+.ShiftLeft:active,
+.ShiftRight:active,
+.ControlRight:active,
+.ControlLeft:active,
+.AltRight:active,
+.AltLeft:active,
+.ArrowLeft:active,
+.ArrowRight:active,
+.ArrowDown:active,
+.ArrowUp:active,
+.MetaLeft:active,
+.Backspace.active,
+.Tab.active,
+.Delete.active,
+.CapsLock.active,
+.Enter.active,
+.ShiftLeft.active,
+.ShiftRight.active,
+.ControlRight.active,
+.ControlLeft.active,
+.AltRight.active,
+.AltLeft.active,
+.ArrowLeft.active,
+.ArrowRight.active,
+.ArrowDown.active,
+.ArrowUp.active,
+.MetaLeft.active {
+  background-color: rgb(158, 192, 204);
+  color: rgb(91, 118, 128);
+}
+
+/* скрыть клавиши */
+
+.hidden {
+  display: none;
+}
