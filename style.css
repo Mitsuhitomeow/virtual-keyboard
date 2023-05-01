@@ -13,9 +13,13 @@ body {
 }
 
 .header-title,
-.footer-info__span {
+.footer-info__p {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: rgb(219, 219, 219)
+}
+
+.footer-info__p {
+  margin: 5px;
 }
 
 .header,
