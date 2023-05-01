@@ -94,26 +94,15 @@ fetch('./keys.json')
       KEY_ENG_TO_SHIFT.textContent = element.engShift;
       KEY_RU_TO_SHIFT.textContent = element.ruShift;
 
-      // document.onkeypress = function (event) {
-      //   console.log(event.keyCode);
-      //   console.log(event.key)
-      //   console.log(event.code)
-      //   if(event.keycode === 96) {
-      //     textArea.value += element.key
-      //   }
-      // }
-
-      // document.onkeypress = function (event) {
-
-      //   if (event.keycode === 20) {
-      //     KEY.classList.add('active')
-      //   }
-      // }
-
       // добавляем событие на клавиши:
       // 1.(по клику на клавишу, должеен происходить ввод текста клавиши)
       // 2.(по клику на уникальную клавишу, должна происходить уникальная функциональность)
 
+      // При нажатии на "CapsLock" клавиши преходят в верхний регистр,
+      /*
+      *   при нажатии на клавиши с буквами, выводятся на текстовое поле
+      *   если "CapsLock" активен, буквы меняют регистр.
+      */
       KEY.addEventListener('click', () => {
         const KEY_CAPS = document.querySelector('.CapsLock');
 
@@ -195,25 +184,6 @@ fetch('./keys.json')
           textArea.value += '\n';
         }
       });
-
-      // KEY.addEventListener('click', () => {
-      //   const KEY_SHIFT = document.querySelector('.ShiftLeft')
-      //   const KEY_ENG = document.querySelectorAll('.key-eng')
-      //   const KEY_ENG_SHIFT = document.querySelectorAll('.key-eng__Shift')
-      //   KEY_SHIFT.classList.add('active')
-
-      //   KEY_ENG.forEach((key) => {
-      //     if (KEY_SHIFT.classList.contains('active') && !key.classList.contains('hidden')) {
-      //       key.classList.add('hidden')
-      //     }
-      //   })
-
-      //   KEY_ENG_SHIFT.forEach((key) => key.classList.remove('hidden'))
-
-      //   if (KEY_SHIFT.classList.contains('active')) {
-      //     KEY_SHIFT.classList.remove('active')
-      //   }
-      // })
     });
 
     // Добавил события клавиш их функционал и класс "active" (анимацию)
@@ -221,7 +191,11 @@ fetch('./keys.json')
       // console.log(event.key);
       event.preventDefault();
 
-      // все клавиши кроме кникальных выводятся в "textarea"
+      // При нажатии на "CapsLock" клавиши преходят в верхний регистр,
+      /*
+      *   при нажатии на клавиши с буквами, выводятся на текстовое поле
+      *   если "CapsLock" активен, буквы меняют регистр.
+      */
       KEYS.forEach((element) => {
         const KEY_CAPS = document.querySelector('.CapsLock');
 
@@ -272,8 +246,6 @@ fetch('./keys.json')
         }
       });
 
-      // При нажатии на "CapsLock" вешается класс active (включается подсветка клавиши)
-      // повторное нажатие убирает класс и выключает подсветку.
       if (event.keyCode === 20) {
         const KEY_CAPS = document.querySelector('.CapsLock');
         KEY_CAPS.classList.toggle('active');
@@ -294,17 +266,6 @@ fetch('./keys.json')
           KEY_ENG.forEach((element) => element.classList.remove('hidden'));
         }
       }
-
-      // if (event.keyCode === 16 && event.keyCode === 17) {
-      //   const KEY_SHIFT = document.querySelector('.ShiftLeft')
-      //   const KEY_CTRL = document.querySelector('.ControlLeft')
-      //   const KEY_LANG = document.querySelector('.key-eng')
-      //   const KEY_LANG_RU = document.querySelector('.key-ru')
-
-      //   KEY_LANG.classList.add('hidden')
-      //   KEY_LANG_RU.classList.remove('hidden')
-
-      // }
 
       // при нажатии на "Space" или "Tab" делает отступ.
       if (event.keyCode === 32 || event.code === 'Tab') {
@@ -332,5 +293,4 @@ fetch('./keys.json')
         }
       });
     });
-  })
-  .catch((error) => console.error('Ошибка данных', error));
+  });
