@@ -11,7 +11,6 @@ HEADER.appendChild(headerTitle);
 document.body.appendChild(HEADER);
 
 headerTitle.textContent = 'RSS виртуальная клавиатура';
-
 // main
 
 const MAIN = document.createElement('main');
@@ -33,13 +32,13 @@ textSection.appendChild(textArea);
 
 const FOOTER = document.createElement('footer');
 const footerSection = document.createElement('section');
-const opSysInfoText = document.createElement('span');
-const switchInfo = document.createElement('span');
+const opSysInfoText = document.createElement('p');
+const switchInfo = document.createElement('p');
 
 FOOTER.classList.add('footer');
 footerSection.classList.add('footer-info');
-opSysInfoText.classList.add('footer-info__span');
-switchInfo.classList.add('footer-info__span');
+opSysInfoText.classList.add('footer-info__p');
+switchInfo.classList.add('footer-info__p');
 
 document.body.appendChild(FOOTER);
 FOOTER.appendChild(footerSection);
@@ -62,6 +61,8 @@ fetch('./keys.json')
       const KEY_RU = document.createElement('span');
       const KEY_ENG_TO_UPPER = document.createElement('span');
       const KEY_RU_TO_UPPER = document.createElement('span');
+      const KEY_ENG_TO_SHIFT = document.createElement('span');
+      const KEY_RU_TO_SHIFT = document.createElement('span');
 
       KEY.classList.add('main-keyboard__key');
       KEY.classList.add(`${element.code}`);
@@ -69,7 +70,11 @@ fetch('./keys.json')
       KEY_RU.classList.add('key-ru');
       KEY_ENG_TO_UPPER.classList.add('key-eng__toUpperCase');
       KEY_RU_TO_UPPER.classList.add('key-ru__toUpperCase');
+      KEY_ENG_TO_SHIFT.classList.add('key-eng__Shift');
+      KEY_RU_TO_SHIFT.classList.add('key-ru__Shift');
 
+      KEY_ENG_TO_SHIFT.classList.add('hidden');
+      KEY_RU_TO_SHIFT.classList.add('hidden');
       KEY_ENG_TO_UPPER.classList.add('hidden');
       KEY_RU_TO_UPPER.classList.add('hidden');
       KEY_RU.classList.add('hidden'); // СКРЫВАЕТ РУССКИЕ БУКВЫ
@@ -79,11 +84,15 @@ fetch('./keys.json')
       KEY.appendChild(KEY_RU);
       KEY.appendChild(KEY_ENG_TO_UPPER);
       KEY.appendChild(KEY_RU_TO_UPPER);
+      KEY.appendChild(KEY_ENG_TO_SHIFT);
+      KEY.appendChild(KEY_RU_TO_SHIFT);
 
       KEY_ENG.textContent = element.labelEng;
       KEY_RU.textContent = element.labelRu;
-      KEY_ENG_TO_UPPER.textContent = element.labelEng.toUpperCase();
-      KEY_RU_TO_UPPER.textContent = element.labelRu.toUpperCase();
+      KEY_ENG_TO_UPPER.textContent = element.engCaps;
+      KEY_RU_TO_UPPER.textContent = element.ruCaps;
+      KEY_ENG_TO_SHIFT.textContent = element.engShift;
+      KEY_RU_TO_SHIFT.textContent = element.ruShift;
 
       // document.onkeypress = function (event) {
       //   console.log(event.keyCode);
@@ -106,10 +115,68 @@ fetch('./keys.json')
       // 2.(по клику на уникальную клавишу, должна происходить уникальная функциональность)
 
       KEY.addEventListener('click', () => {
-        textArea.value += element.key;
+        const KEY_CAPS = document.querySelector('.CapsLock');
 
-        if (element.mod === 'unique') {
-          KEY.classList.toggle('active');
+        if (
+          element.code !== 'Enter'
+          && element.code !== 'Backspace'
+          && element.code !== 'Delete'
+          && element.code !== 'Tab'
+          && element.code !== 'ShiftLeft'
+          && element.code !== 'ShiftRight'
+          && element.code !== 'ControlLeft'
+          && element.code !== 'ControlRight'
+          && element.code !== 'AltLeft'
+          && element.code !== 'AltRight'
+          && element.code !== 'ArrowUp'
+          && element.code !== 'ArrowDown'
+          && element.code !== 'ArrowLeft'
+          && element.code !== 'ArrowRight'
+          && element.code !== 'CapsLock'
+          && element.code !== 'MetaLeft'
+          && !KEY_CAPS.classList.contains('active')
+        ) {
+          textArea.value += element.labelEng;
+        } else if (
+          element.code !== 'Enter'
+          && element.code !== 'Backspace'
+          && element.code !== 'Delete'
+          && element.code !== 'Tab'
+          && element.code !== 'ShiftLeft'
+          && element.code !== 'ShiftRight'
+          && element.code !== 'ControlLeft'
+          && element.code !== 'ControlRight'
+          && element.code !== 'AltLeft'
+          && element.code !== 'AltRight'
+          && element.code !== 'ArrowUp'
+          && element.code !== 'ArrowDown'
+          && element.code !== 'ArrowLeft'
+          && element.code !== 'ArrowRight'
+          && element.code !== 'CapsLock'
+          && element.code !== 'MetaLeft'
+          && KEY_CAPS.classList.contains('active')
+        ) {
+          textArea.value += element.engCaps;
+        }
+
+        if (element.keyCode === 20) {
+          KEY_CAPS.classList.toggle('active');
+
+          if (KEY_CAPS.classList.contains('active')) {
+            const KEY_ENG_CAPS_CLICK = document.querySelectorAll('.key-eng__toUpperCase');
+            const KEY_ENG_CLICK = document.querySelectorAll('.key-eng');
+
+            KEY_ENG_CAPS_CLICK.forEach((key) => key.classList.remove('hidden'));
+            KEY_ENG_CLICK.forEach((key) => key.classList.add('hidden'));
+          }
+
+          if (!KEY_CAPS.classList.contains('active')) {
+            const KEY_ENG_CAPS_CLICK = document.querySelectorAll('.key-eng__toUpperCase');
+            const KEY_ENG_CLICK = document.querySelectorAll('.key-eng');
+
+            KEY_ENG_CAPS_CLICK.forEach((key) => key.classList.add('hidden'));
+            KEY_ENG_CLICK.forEach((key) => key.classList.remove('hidden'));
+          }
         }
 
         // при нажатии на "Backspace" удаляет последний символ.
@@ -129,23 +196,76 @@ fetch('./keys.json')
         }
       });
 
-      return element;
+      // KEY.addEventListener('click', () => {
+      //   const KEY_SHIFT = document.querySelector('.ShiftLeft')
+      //   const KEY_ENG = document.querySelectorAll('.key-eng')
+      //   const KEY_ENG_SHIFT = document.querySelectorAll('.key-eng__Shift')
+      //   KEY_SHIFT.classList.add('active')
+
+      //   KEY_ENG.forEach((key) => {
+      //     if (KEY_SHIFT.classList.contains('active') && !key.classList.contains('hidden')) {
+      //       key.classList.add('hidden')
+      //     }
+      //   })
+
+      //   KEY_ENG_SHIFT.forEach((key) => key.classList.remove('hidden'))
+
+      //   if (KEY_SHIFT.classList.contains('active')) {
+      //     KEY_SHIFT.classList.remove('active')
+      //   }
+      // })
     });
 
     // Добавил события клавиш их функционал и класс "active" (анимацию)
     document.addEventListener('keydown', (event) => {
-      // console.log(event.keyCode);
+      // console.log(event.key);
       event.preventDefault();
 
-      // все клавиши что соответствуют данным из json, выводятся в "textarea"
+      // все клавиши кроме кникальных выводятся в "textarea"
       KEYS.forEach((element) => {
-        if (event.key === element.key) {
-          textArea.value += event.key;
-        }
-      });
+        const KEY_CAPS = document.querySelector('.CapsLock');
 
-      // при нажатии вешаю класс с подсвечиванием клавиши кроме "CapsLock"
-      KEYS.forEach((element) => {
+        if (event.key === element.labelEng
+          && event.code !== 'Enter'
+          && event.code !== 'Backspace'
+          && event.code !== 'Delete'
+          && event.code !== 'Tab'
+          && event.code !== 'ShiftLeft'
+          && event.code !== 'ShiftRight'
+          && event.code !== 'ControlLeft'
+          && event.code !== 'ControlRight'
+          && event.code !== 'AltLeft'
+          && event.code !== 'AltRight'
+          && event.code !== 'ArrowUp'
+          && event.code !== 'ArrowDown'
+          && event.code !== 'ArrowLeft'
+          && event.code !== 'ArrowRight'
+          && event.code !== 'CapsLock'
+          && event.code !== 'MetaLeft'
+        ) {
+          textArea.value += element.labelEng;
+        } else if (event.key === element.engCaps
+          && event.code !== 'Enter'
+          && event.code !== 'Backspace'
+          && event.code !== 'Delete'
+          && event.code !== 'Tab'
+          && event.code !== 'ShiftLeft'
+          && event.code !== 'ShiftRight'
+          && event.code !== 'ControlLeft'
+          && event.code !== 'ControlRight'
+          && event.code !== 'AltLeft'
+          && event.code !== 'AltRight'
+          && event.code !== 'ArrowUp'
+          && event.code !== 'ArrowDown'
+          && event.code !== 'ArrowLeft'
+          && event.code !== 'ArrowRight'
+          && event.code !== 'CapsLock'
+          && event.code !== 'MetaLeft'
+          && KEY_CAPS.classList.contains('active')
+        ) {
+          textArea.value += element.engCaps;
+        }
+
         if (event.code === element.code && event.keyCode !== 20) {
           const KEY = document.querySelector(`.${element.code}`);
           KEY.classList.add('active');
@@ -157,7 +277,34 @@ fetch('./keys.json')
       if (event.keyCode === 20) {
         const KEY_CAPS = document.querySelector('.CapsLock');
         KEY_CAPS.classList.toggle('active');
+
+        if (KEY_CAPS.classList.contains('active')) {
+          const KEY_ENG_CAPS = document.querySelectorAll('.key-eng__toUpperCase');
+          const KEY_ENG = document.querySelectorAll('.key-eng');
+
+          KEY_ENG_CAPS.forEach((element) => element.classList.remove('hidden'));
+          KEY_ENG.forEach((element) => element.classList.add('hidden'));
+        }
+
+        if (!KEY_CAPS.classList.contains('active')) {
+          const KEY_ENG_CAPS = document.querySelectorAll('.key-eng__toUpperCase');
+          const KEY_ENG = document.querySelectorAll('.key-eng');
+
+          KEY_ENG_CAPS.forEach((element) => element.classList.add('hidden'));
+          KEY_ENG.forEach((element) => element.classList.remove('hidden'));
+        }
       }
+
+      // if (event.keyCode === 16 && event.keyCode === 17) {
+      //   const KEY_SHIFT = document.querySelector('.ShiftLeft')
+      //   const KEY_CTRL = document.querySelector('.ControlLeft')
+      //   const KEY_LANG = document.querySelector('.key-eng')
+      //   const KEY_LANG_RU = document.querySelector('.key-ru')
+
+      //   KEY_LANG.classList.add('hidden')
+      //   KEY_LANG_RU.classList.remove('hidden')
+
+      // }
 
       // при нажатии на "Space" или "Tab" делает отступ.
       if (event.keyCode === 32 || event.code === 'Tab') {
